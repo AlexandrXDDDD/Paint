@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas</title>
+	<style>
+		* {
+			box-sizing: border-box;	
+		}
+		#settings {
+			position: absolute;
+			display: block;
+			left: 20px;
+			top: 20px;
+			width: 50px;
+			height: 50px;
+			border: 2px dashed #aaa;
+			background: url(settings.svg) no-repeat;
+			background-size: 60% 60%;
+			background-position: center;
+			border-radius: 50%;
+			outline: none;
+			transition: .2s;
+		}
+		#settings:hover {
+			border: 2px  #999;
+			cursor: pointer;
+		}
+		#costomize {
+			display: none;
+			position: absolute;
+			width: 600px;
+			height: 750px;
+			left: calc(50% - 300px);
+			top: calc(50% - 375px);
+			box-shadow: 2px 2px 10px #333;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			background: #fff;
+		}
+		#costomize label {
+			float: left;
+			width: 80%;
+			margin-left: 10%;
+			margin-right: 10%;
+			height: 40px;
+			margin-top: 50px;
+			font-size: 25px;
+			line-height: 40px;
+		}
+		#costomize label input {
+			float: right;
+			width: 60%;
+			height: 40px;
+		}
+		#costomize #save {
+			position: absolute;
+			width: 40%;
+			left: 30%;
+			right: 30%;
+			height: 30px;
+			bottom: 100px;
+		}
+	</style>
+</head>
+<body style="margin:0;">
+	<button id="settings"></button>
+	<div id="costomize">
+		<label>Brush Size:<input id="brush" type="number" value="5" min="1" max="100"></label>
+		<label>Color: <input id="color" type="color"></label>
+		<label>URL: <input id="url" type="url"></label>
+		<button id="save">Save</button>
+	</div>
+	<canvas id="canvas" style="display: block;"></canvas>
+</body>
+<script src="main.js"></script>
+</html>
